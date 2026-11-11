@@ -66,7 +66,7 @@ flowchart LR
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/2nothing4/cloudops-cli.git
+git clone https://github.com/ziadchabane/cloudops-cli.git
 cd cloudops-cli
 ```
 
