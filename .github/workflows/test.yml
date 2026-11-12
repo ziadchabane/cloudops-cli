@@ -1,0 +1,17 @@
+New-Item -ItemType Directory -Force -Path .github\workflows
+@"
+name: CLI Tests
+
+on: [push, pull_request]
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -e . pytest "moto[s3]"
+      - run: pytest -v
+"@ | Out-File -Encoding utf8 .github\workflows\test.yml
